@@ -1,14 +1,14 @@
+#include <iostream>
 #include "hvmixer.h"
-#include <gtkmm/application.h>
+/*#include "settings.h"*/
+
 
 int
 main(int argc, char **argv)
 {
-    Glib::RefPtr<Gtk::Application> app = 
-        Gtk::Application::create(argc, argv, "org.hotvic.hvmixer");
+    Gtk::Main kit(argc, argv);
     
-    HVMixer::SettingsWindow sw;
-    sw.opensw();
+    HVMixer::TrayIcon tray;
     
-    return app->run(sw);
+    Gtk::Main::run();
 }
